@@ -40,13 +40,12 @@ class niceautoload_lib_AutoLoad
 		foreach ($filenames as $f)
 		{
 			$this->filename = $f;
-			$fileInPath = $this->searchInIncludePath();
+			$fileWithPath = $this->searchInIncludePath();
 
-			if($fileInPath != '' && file_exists($fileInPath))
-				require_once($this->filename);
+			if($fileWithPath != '' && file_exists($fileWithPath))
+				require_once($fileWithPath);
 		}
 	}
-
 
 	/**
 	 * Search for file in the include path
